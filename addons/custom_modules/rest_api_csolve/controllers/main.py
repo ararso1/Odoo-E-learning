@@ -49,3 +49,18 @@ class UserRestAPI(http.Controller):
 
         except Exception as e:
             return {"error": str(e)}
+        
+
+    @http.route("/send_invite_course", type='json', auth='public',
+                methods=['POST'], csrf=False, save_session=False)
+    def send_course_invite(self,**kw):
+        for i in range(10):
+            print(i)
+        vals={
+            "partner_ids":[41],
+            "channel_id":1,
+            "send_email":True
+        }
+        x=request.env["slide.channel.invite"].sudo().create(vals)
+        x.sudo().action_invite()
+        return 0

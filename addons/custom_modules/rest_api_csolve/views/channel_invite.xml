@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 Dixmit
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <data>
+        <!-- Inherit the existing view -->
+        <record id="inherit_channel_invite_form_view" model="ir.ui.view">
+            <field name="name">slide.channel.invite.view.form</field>
+            <field name="model">slide.channel.invite</field>
+            <field name="inherit_id" ref="website_slides.slide_channel_invite_view_form"/>
+            <field name="arch" type="xml">
+                <!-- Modify the context of the specific field -->
+                <field name="partner_ids" position="after">
+                    <field name="csv_file"/>
+            </field>
+            </field>
+        </record>
+    </data>
+</odoo>
