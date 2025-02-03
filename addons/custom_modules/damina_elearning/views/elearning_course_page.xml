@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="demina_coursecard" inherit_id="website_slides.course_main">
+            <!-- Add "Overview" Tab -->
+            <xpath expr="//ul[@id='profile_extra_info_tablist']" position="inside">
+                <li class="nav-item o_wslides_course_header_nav_review" role="presentation">
+                    <a t-att-class="'nav-link %s' % ('active' if active_tab == 'overview' else '')"
+                        t-att-id="'overview-tab-%s' % channel.id" 
+                        data-bs-toggle="pill" 
+                        t-att-href="'#overview-%s' % channel.id" 
+                        role="tab" 
+                        t-att-aria-controls="'overview-%s' % channel.id" 
+                        t-att-aria-selected="'true' if active_tab == 'overview' else 'false'">
+                        Overview
+                    </a>
+                </li>
+                   <li class="nav-item o_wslides_course_header_nav_review" role="instructor">
+                    <a t-att-class="'nav-link %s' % ('active' if active_tab == 'instructor' else '')"
+                        t-att-id="'instructor-tab-%s' % channel.id" 
+                        data-bs-toggle="pill" 
+                        t-att-href="'#instructor-%s' % channel.id" 
+                        role="tab" 
+                        t-att-aria-controls="'instructor-%s' % channel.id" 
+                        t-att-aria-selected="'true' if active_tab == 'instructor' else 'false'">
+                        Instructor
+                    </a>
+                </li>
+            </xpath>
+
+            <!-- Add "Overview" Tab Content -->
+            <xpath expr="//div[@id='review']" position="after">
+                <t>
+                    <div t-att-id="'overview-%s' % channel.id"
+                         t-att-class="'tab-pane fade %s' % ('show active' if active_tab == 'overview' else '')"
+                         data-oe-model="slide.channel"
+                         t-att-data-oe-id="channel.id"
+                         data-oe-field="overview_content"
+                         data-oe-type="html">
+                        <div t-field="channel.overview_content" />
+                    </div>
+                    <div t-att-id="'instructor-%s' % channel.id"
+                         t-att-class="'tab-pane fade %s' % ('show active' if active_tab == 'instructor' else '')"
+                         data-oe-model="slide.channel"
+                         t-att-data-oe-id="channel.id"
+                         data-oe-field="instructor_content"
+                         data-oe-type="html">
+                        <div t-field="channel.instructor_content" />
+                    </div>
+                </t>
+            </xpath>
+        </template>
+
+        <template id="demina_coursecard_categ" inherit_id="website_slides.courses_home">
+        <xpath expr="//div[@id='navbarSlidesHomepage']" position="inside">
+            <div class="navbar-nav pt-3 pt-lg-0">
+                            <a class="nav-link nav-link me-md-2 o_wslides_home_all_slides" href="/slides/all/tag/certificate">Certification Courses</a>
+                        </div>
+            <div class="navbar-nav pt-3 pt-lg-0">
+                            <a class="nav-link nav-link me-md-2 o_wslides_home_all_slides" href="/slides/all/tag/deploma">Deploma Courses</a>
+                        </div>
+        </xpath>
+        </template>
+
+        <template id="demina_chatgroup_link" inherit_id="website_slides.course_sidebar">
+       <xpath expr="//table" position="inside">
+    <tr t-if="1">
+        <th class="border-top-0">Chat Group</th>
+        <td class="border-top-0 text-break">
+            <a t-if="channel.chat_url" t-att-href="channel.chat_url" target="_blank" rel="noopener noreferrer">
+                <span t-esc="'join group'"/>
+            </a>
+            <span t-if="not channel.chat_url">--</span>
+        </td>
+    </tr>
+</xpath>
+
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="demina_coursebanner" inherit_id='website_slides.course_card'>
+
+            <xpath expr="//a[1]" position="before">
+                <div t-if="channel.enroll != 'public'" class="o_ribbon bg-warning text-white position-absolute top-0 end-0 px-2" style="z-index: 1; margin-top: 8px; margin-left: 8px; text-align: center; font-weight: bold;">
+                Paid
+                </div>
+
+                <div t-if="channel.enroll == 'public'" class="o_ribbon bg-warning text-white position-absolute top-0 end-0 px-2" style="z-index: 1; margin-top: 8px; margin-left: 8px; text-align: center; font-weight: bold;">
+                    Free
+                </div>
+
+
+                <div  class="o_ribbon bg-warning text-white position-absolute top-0 left-0 px-2" style="z-index: 1; margin-top: 8px; margin-left: 8px; text-align: center; font-weight: bold;">
+                    <span t-esc="channel.demina_course_type"/>
+                </div>
+            </xpath>
+
+        </template>
+    </data>
+</odoo>

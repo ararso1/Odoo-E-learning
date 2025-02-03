@@ -1,0 +1,22 @@
+   <odoo>
+    <data>
+    <record id="view_elearning_course_certifcate_form_inherit" model="ir.ui.view">
+            <field name="name">course.ceritificate.deploma</field>
+            <field name="model">slide.channel</field>
+            <field name="inherit_id" ref="website_slides.view_slide_channel_form"/>
+            <field name="arch" type="xml">
+            
+                <xpath expr="//div[field[@name='tag_ids']]" position="after">
+                <div style="width:100%;margin-top:20px">
+                    <label for="demina_course_type" string="Course Type"/>
+                    <field name="demina_course_type" style="width:60% ;margin-left:20px"/>
+                </div>
+                <div style="width:100%;margin-top:20px">
+                    <label for="chat_url" string="Chat Group Invitaion Link"/>
+                    <field name="chat_url" style="width:60%;margin-left:20px"/>
+                </div>
+                </xpath>
+            </field>
+            </record>
+            </data>
+   </odoo>
