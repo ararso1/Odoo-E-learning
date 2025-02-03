@@ -1,5 +1,5 @@
 {
-    "name": "Daminaa Theme",
+    "name": "Damiina Theme",
     "author": "Ararso",
     "depends": ["base",  "web", "web_editor","website"],
     "data": [

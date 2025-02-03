@@ -20,7 +20,7 @@
                     <t t-if="not disable_database_manager">
                         <a class="border-end pe-2 me-1" href="/web/database/manager">Databases</a>
                     </t>
-                    <a href="#" target="_blank">Powered by <span>Daminaa</span>
+                    <a href="#" target="_blank">Powered by <span>Damiina</span>
                     </a>
                 </div>
             </xpath>

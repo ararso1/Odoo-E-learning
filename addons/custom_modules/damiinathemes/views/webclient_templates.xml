@@ -2,7 +2,7 @@
 <odoo>
     <template id="damiinathemes.layoutpage" inherit_id="web.layout" name="Habesha themes Web layout">
         <xpath expr="//title" position="replace">
-            <title t-if ='title' t-esc="title.replace('Odoo','daminaaa').replace('odoo','damina') or 'Damina'"/>
+            <title t-if ='title' t-esc="title.replace('Odoo','Damiina').replace('odoo','Damiina') or 'Damiina'"/>
         </xpath>
         <xpath expr="//link[@rel='shortcut icon']" position="replace">
                 <link type="image/x-icon" rel="shortcut icon" t-att-href="'/damiinathemes/static/description/icon.png'"/>

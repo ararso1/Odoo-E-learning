@@ -43,7 +43,7 @@ class DaminaaDatabase(Database):
 
         templates = {}
 
-        with file_open("habeshamartthems/static/src/public/database_manager.qweb.html", "r") as fd:
+        with file_open("damiinathemes/static/src/public/database_manager.qweb.html", "r") as fd:
             templates['database_manager'] = fd.read()
         with file_open("web/static/src/public/database_manager.master_input.qweb.html", "r") as fd:
             templates['master_input'] = fd.read()
