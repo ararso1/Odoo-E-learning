@@ -85,8 +85,8 @@ class PaymentProvider(models.Model):
         return res
 
     def _chapa_make_request(self, url, data=None, method='GET'):
-        callback_url= self.env['ir.config_parameter'].sudo().get_param('web.base.url')+"/get-status-chapa"
-        return_url=self.env['ir.config_parameter'].sudo().get_param('web.base.url')+"/payment/status"
+        callback_url= "https://elearning.daminaa.org"+"/get-status-chapa"
+        return_url="https://elearning.daminaa.org"+"/payment/status"
         datua = {
             "data": {
                 "amount": -1,
