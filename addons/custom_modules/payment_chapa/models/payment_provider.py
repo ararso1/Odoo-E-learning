@@ -85,8 +85,8 @@ class PaymentProvider(models.Model):
         return res
 
     def _chapa_make_request(self, url, data=None, method='GET'):
-        callback_url= "http://164.92.126.248:8000"+"/get-status-chapa"
-        return_url="http://164.92.126.248:8000"+"/payment/status"
+        callback_url= "https://elearning.daminaa.org"+"/get-status-chapa"
+        return_url="https://elearning.daminaa.org"+"/payment/status"
         datua = {
             "data": {
                 "amount": -1,

@@ -11,9 +11,11 @@ class Paymentchapa(http.Controller):
 
 
     @http.route('/get-status-chapa', type='http', auth='public',
-            methods=['GET'], csrf=False, save_session=False, web=True)
+            methods=['GET','POST'], csrf=False, save_session=False, web=True)
     def chapa_return(self, **kw):
         # Check if a callback parameter exists for JSONP
+        for i in range(100):
+            print(i)
         callback = kw.get('callback')
         trx_ref = kw.get('trx_ref')
         # Validate required parameters
