@@ -2,8 +2,8 @@ from odoo import models, fields ,api
 
 class SlideChannel(models.Model):
     _inherit = 'slide.channel'
-    overview_content = fields.Html(string="Overview Content")
-    instructor_content = fields.Html(string="Instructor Content")
+    overview_content = fields.Html('Over view Content', translate=True, sanitize_attributes=False, sanitize_form=False, help="Overview Content")
+    instructor_content = fields.Html('instructor Content', translate=True, sanitize_attributes=False, sanitize_form=False, help="Instructor Content")
     demina_course_type = fields.Selection(
         selection=[
             ('certificate', 'Certificate'),
