@@ -93,8 +93,8 @@ class PaymentProvider(models.Model):
                 "tx_ref": "",
                 "currency": self.encryptor("ETB"),
                 "first_name": "haile",
-                "email": self.encryptor("remamtsega@gmail.com"),
-                "phone_number":self.encryptor("0947731212"),
+                "email": self.encryptor("abdulselam4246@gmail.com"),
+                "phone_number":self.encryptor(data['partner_phone']),
                 "last_name": "tsega",
                 "customization": {
                     "title": "Payment",
