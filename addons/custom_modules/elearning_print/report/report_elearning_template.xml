@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <template id="certification_report_view_damina" inherit_id="survey.certification_report_view_general">
+            <xpath expr="//div[@id='o_survey_certification']" position="attributes">
+                <attribute name="class">article certification-wrapper damina-template blue</attribute>
+            </xpath>
+        
+            <xpath expr="//div[@class='certification-top']" position="replace">
+                <div class="certification-top" style="text-align: center;">
+                    <img src="/elearning_print/static/src/img/damina_logo.png" style="height: 80px; float: left; margin: 20px;" />
+                    <img src="/elearning_print/static/src/img/medal.png" style="height: 60px; float: right; margin: 20px;" />
+                    <h1 style="font-size: 48px; color: #00AEEF; margin-top: 40px;">CERTIFICATE</h1>
+                    <h2 style="color: #003366; letter-spacing: 3px;">OF COMPLETION</h2>
+                </div>
+            </xpath>
+        
+            <xpath expr="//div[@class='page certification-content']" position="replace">
+                <div class="page certification-content" style="text-align: center;">
+                    <p style="font-size: 18px; margin-top: 20px;">This certificate is proudly presented to:</p>
+                    <t t-set="certified_name" t-value="user_input.partner_id.name or user_input.email or ''"/>
+                    <h2 t-out="certified_name" style="font-size: 36px; font-weight: bold; margin: 20px 0; color: #000;">Full Name</h2>
+        
+                    <p style="font-size: 14px; color: #555; margin: 0 100px;">
+                        For successfully completing the <b><span t-field="user_input.survey_id.display_name">Functional Training</span></b> training on May 1, 2025,
+                        demonstrating practical skills in visual communication,
+                         digital creativity, and post-production techniques.
+                    </p>
+        
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 60px 80px 30px;">
+                        <div style="text-align: center;">
+                            <img src="/elearning_print/static/src/img/sign1.jpg" style="height: 40px;" />
+                            <p><strong>Ibsa Damiina</strong><br/>Chief Executive Officer</p>
+                        </div>
+        
+                        <img src="/elearning_print/static/src/img/stamp.jpg" style="height: 100px;" />
+        
+                        <div style="text-align: center;">
+                            <img src="/elearning_print/static/src/img/sign2.jpg" style="height: 40px;" />
+                            <p><strong>Ararso Alisho</strong><br/>E-learning Director</p>
+                        </div>
+                    </div>
+        
+                    <div class="certification-number" style="margin-top: 20px;">
+                        DT:<span t-out="str(user_input.id).rjust(6, '0') + '/25'">000105/25</span>
+                    </div>
+                </div>
+            </xpath>
+        
+            <xpath expr="//div[@class='certification-bottom']" position="replace"/>
+        </template>
+        
+        
+    
+    </data>
+    
+</odoo>

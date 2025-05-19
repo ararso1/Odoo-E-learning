@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+
+        <template id="report_elearning_certificate">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="article"
+                         t-att-data-oe-model="'survey.user_input'"
+                         t-att-data-oe-id="doc.id">
+                         
+                        <div class="page" style="position: relative; width: 100%; height: 100%;">
+                            <!-- Background image -->
+                            <img t-att-src="'/your_module_name/static/src/img/elearning_template.jpg'"
+                                 style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0;" />
+        
+                            <!-- Certificate content -->
+                            <div style="position: relative; z-index: 1; text-align: center; padding-top: 150px;">
+                                <h1 style="font-size: 30px; color: #00AEEF;">CERTIFICATE</h1>
+                                <h3 style="color: #0056b3;">OF COMPLETION</h3>
+                                <p style="font-size: 18px; margin-top: 40px;">This certificate is proudly presented to:</p>
+                                <h2 style="font-size: 26px; font-weight: bold; margin-top: 10px;">
+                                    <t t-esc="doc.partner_id.name"/>
+                                </h2>
+                                <p style="margin-top: 20px; max-width: 80%; margin-left: auto; margin-right: auto;">
+                                    Lorem ipsum is a placeholder text commonly used in publishing and graphic design to demonstrate the visual form of a document or a typeface without relying on meaningful content.
+                                </p>
+        
+                                <!-- Signatures and Seal -->
+                                <div style="margin-top: 100px; display: flex; justify-content: space-around;">
+                                    <div>
+                                        <p>Ibsa Damiina</p>
+                                        <p style="font-size: 12px;">Chief Executive Officer</p>
+                                    </div>
+                                    <div>
+                                        <p>Ararso Alisho</p>
+                                        <p style="font-size: 12px;">E-learning Director</p>
+                                    </div>
+                                </div>
+        
+                                <!-- Seal -->
+                                <div style="position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%);">
+                                    <img t-att-src="'/your_module_name/static/src/img/seal.png'" style="width: 100px; height: auto;" />
+                                </div>
+        
+                                <!-- Certificate Number -->
+                                <div style="position: absolute; bottom: 30px; right: 40px; font-size: 12px;">
+                                    <p>DT:000105/25</p>
+                                </div>
+                            </div>
+                        </div>
+        
+                    </div>
+                </t>
+            </t>
+        </template>
+        
+        
+
+</data>
+</odoo>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="survey.certification_report_view_general">
+            <!-- Style classes to be applied to '#o_survey_certification': [no class](purple), gold, blue -->
+            <div id="o_survey_certification" t-att-data-oe-model="user_input._name" t-att-data-oe-id="user_input.id" 
+                t-attf-class="#{'article certification-wrapper ' + layout_template + ' ' + layout_color}" style="background-color: white;">
+                <div class="certification" style="background-color: white; background-image: url('/elearning_print/static/src/img/background1.jpg'); background-size: cover; background-repeat: no-repeat;">
+                    <div class="certification-top" style="text-align: center;">
+                        <img src="/elearning_print/static/src/img/damina_logo.png" style="height: 80px; float: left; margin-top: -95px; margin-left:20px;" />
+                        <img src="/elearning_print/static/src/img/medal.png" style="height: 160px; float: right; margin-top: -95px; margin-right:20px;" />
+                        <h1 style="font-size: 63.6px; color: #00AEEF; margin-top: 0px;"><b>CERTIFICATE</b></h1>
+                        <p style="color: #003366; letter-spacing: 3px; font-size: 24.3px; margin-top:26px">OF COMPLETION</p>
+                    </div>
+
+                    <div class="page certification-content" style="text-align: center; margin-top:-20px;">
+                        <p style="font-size: 18px; margin-top: 0px;">This certificate is proudly presented to:</p>
+                        <t t-set="certified_name" t-value="user_input.partner_id.name or user_input.email or ''"/>
+                        <h2 t-out="certified_name" style="font-size: 36px; font-weight: bold; margin: 20px 0; color: #000;">Full Name</h2>
+            
+                        <p style="font-size: 14px; color: #555; margin: 0 100px;">
+                            For successfully completing the <b><span t-field="user_input.survey_id.display_name">Functional Training</span></b> training on May 1, 2025,
+                            demonstrating practical skills in visual communication,
+                             digital creativity, and post-production techniques.
+                             demonstrating practical skills in visual communication,
+                          
+                             
+                            
+                        </p>
+            
+                        <div class="certification-bottom"
+     style="display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 20px;">
+    
+    <div style="text-align: center;">
+        <img src="/elearning_print/static/src/img/sign1.jpg" style="height: 40px;" />
+        <p><strong>Ibsa Damiina</strong><br/>Chief Executive Officer</p>
+    </div>
+
+    <img src="/elearning_print/static/src/img/stamp.jpg" style="height: 100px;" />
+
+    <div style="text-align: center;">
+        <img src="/elearning_print/static/src/img/sign2.jpg" style="height: 40px;" />
+        <p><strong>Ararso Alisho</strong><br/>E-learning Director</p>
+    </div>
+</div>
+
+                        <div class="certification-number" style="margin-top: 20px;">
+                            DT:<span t-out="str(user_input.id).rjust(6, '0') + '/25'">000105/25</span>
+                        </div>
+                    </div>
+            
+
+                    
+                    <div t-if="user_input.test_entry" class="test-entry"/>
+                    <div class="certification-number" t-if="user_input.scoring_success">
+                        Certification n°<span t-out="str(user_input.id).rjust(10, '0')">0000000010</span>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="certification_report_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="user_input">
+                    <t t-set="layout_values" t-value="user_input.survey_id.certification_report_layout.split('_') if user_input.survey_id.certification_report_layout else ['modern', 'purple']"/>
+                    <t t-set="layout_template" t-value="layout_values[0]"/>
+                    <t t-set="layout_color" t-value="layout_values[1]"/>
+                    <t t-call="survey.certification_report_view_general"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>
