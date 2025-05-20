@@ -28,21 +28,28 @@
                             
                         </p>
             
-                        <div class="certification-bottom"
-     style="display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 20px;">
-    
-    <div style="text-align: center;">
-        <img src="/elearning_print/static/src/img/sign1.jpg" style="height: 40px;" />
-        <p><strong>Ibsa Damiina</strong><br/>Chief Executive Officer</p>
-    </div>
-
-    <img src="/elearning_print/static/src/img/stamp.jpg" style="height: 100px;" />
-
-    <div style="text-align: center;">
-        <img src="/elearning_print/static/src/img/sign2.jpg" style="height: 40px;" />
-        <p><strong>Ararso Alisho</strong><br/>E-learning Director</p>
-    </div>
-</div>
+                        <div class="certification-bottom" style="
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 40px;
+                        margin-top: 20px;
+                        flex-wrap: nowrap;
+                    ">
+                        <div style="text-align: center;">
+                            <img src="/elearning_print/static/src/img/sign1.jpg" style="height: 40px;" />
+                            <p><strong>Ibsa Damiina</strong><br/>Chief Executive Officer</p>
+                        </div>
+                    
+                        <img src="/elearning_print/static/src/img/stamp.jpg" style="height: 100px;" />
+                    
+                        <div style="text-align: center;">
+                            <img src="/elearning_print/static/src/img/sign2.jpg" style="height: 40px;" />
+                            <p><strong>Ararso Alisho</strong><br/>E-learning Director</p>
+                        </div>
+                    </div>
+                    
 
                         <div class="certification-number" style="margin-top: 20px;">
                             DT:<span t-out="str(user_input.id).rjust(6, '0') + '/25'">000105/25</span>
